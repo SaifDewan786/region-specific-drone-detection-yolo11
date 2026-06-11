@@ -399,24 +399,6 @@ region-specific-drone-detection-yolo11/
 ├── .gitignore
 ├── config.yaml
 │
-├── src/
-│   ├── __init__.py
-│   ├── dataset_converter.py
-│   ├── train.py
-│   ├── evaluate.py
-│   ├── inference.py
-│   ├── video_utils.py
-│   ├── visualization.py
-│   └── utils.py
-│
-├── scripts/
-│   ├── prepare_public_dataset.py
-│   ├── train_yolo11_baseline.py
-│   ├── evaluate_public_dataset.py
-│   ├── run_local_video_inference.py
-│   ├── convert_local_annotations.py
-│   └── visualize_predictions.py
-│
 ├── notebooks/
 │   ├── yolo_training.ipynb
 │   └── yolo_eval.ipynb
@@ -433,46 +415,6 @@ region-specific-drone-detection-yolo11/
 │   ├── methodology.md
 │   ├── local_error_analysis.md
 │   └── future_work.md
-│
-└── sample_outputs/
-    └── README.md
-```
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/region-specific-drone-detection-yolo11.git
-cd region-specific-drone-detection-yolo11
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-Activate the environment.
-
-For Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-For Linux or macOS:
-
-```bash
-source .venv/bin/activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
 ```
 
 ---
@@ -527,53 +469,6 @@ test: images/test
 
 names:
   0: drone
-```
-
----
-
-## Usage
-
-### 1. Train YOLO11 Baseline
-
-```bash
-python scripts/train_yolo11_baseline.py \
-  --data data/public_drone_dataset/data.yaml \
-  --model yolo11n.pt \
-  --epochs 100 \
-  --imgsz 640
-```
-
-### 2. Evaluate on Public Dataset
-
-```bash
-python scripts/evaluate_public_dataset.py \
-  --model runs/detect/train/weights/best.pt \
-  --data data/public_drone_dataset/data.yaml
-```
-
-### 3. Run Inference on Local Videos
-
-```bash
-python scripts/run_local_video_inference.py \
-  --model runs/detect/train/weights/best.pt \
-  --source data/local_videos/
-```
-
-### 4. Convert Local COCO Annotations to YOLO Format
-
-```bash
-python scripts/convert_local_annotations.py \
-  --coco-json annotations/local_annotations.json \
-  --images-dir data/local_frames/ \
-  --output-dir data/local_yolo_dataset/
-```
-
-### 5. Future Local Evaluation
-
-```bash
-python scripts/evaluate_public_dataset.py \
-  --model runs/detect/train/weights/best.pt \
-  --data data/local_yolo_dataset/data.yaml
 ```
 
 ---
@@ -777,32 +672,6 @@ Future dataset handling should follow responsible practices:
 | Phase 6 | Documentation and repository organization                                           |
 | Phase 7 | Future local annotation conversion and formal local evaluation                      |
 | Phase 8 | Future region-specific fine-tuning and comparison                                   |
-
----
-
-## Notes on Reproducibility
-
-The current notebooks contain the original experimental workflow. The scripts and `src/` directory are intended to make the project easier to reproduce and extend.
-
-Recommended workflow:
-
-```bash
-python scripts/train_yolo11_baseline.py
-```
-
-```bash
-python scripts/evaluate_public_dataset.py
-```
-
-```bash
-python scripts/run_local_video_inference.py
-```
-
-```bash
-python scripts/convert_local_annotations.py
-```
-
-Then update the result tables and figures inside the `results/` directory.
 
 ---
 
