@@ -395,9 +395,6 @@ region-specific-drone-detection-yolo11/
 │
 ├── README.md
 ├── LICENSE
-├── requirements.txt
-├── .gitignore
-├── config.yaml
 │
 ├── notebooks/
 │   ├── yolo_training.ipynb
