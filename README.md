@@ -488,8 +488,6 @@ results = model.predict(
 
 ## Visual Results
 
-Place result figures inside `results/figures/`.
-
 ### Public Dataset Metrics
 
 ![Public Dataset Metrics](results/figures/public_dataset_metrics.png)
@@ -501,8 +499,6 @@ Place result figures inside `results/figures/`.
 ---
 
 ## Results Files
-
-Recommended result files:
 
 ### `results/tables/public_dataset_metrics.csv`
 
