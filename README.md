@@ -490,11 +490,11 @@ results = model.predict(
 
 ### Public Dataset Metrics
 
-![Public Dataset Metrics](results/figures/public_dataset_metrics.png)
+![Public Dataset Metrics](Results/Figures/public_dataset_metrics.png)
 
 ### Local Video Confidence
 
-![Local Video Confidence](results/figures/local_video_confidence.png)
+![Local Video Confidence](Results/Figures/local_video_confidence.png)
 
 ---
 
