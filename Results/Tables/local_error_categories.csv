@@ -1,1 +1,6 @@
-
+error_category,description,examples,practical_impact,future_fix
+False positives,Model detects non-drone objects as drones,"humans; windows; tree branches; poles; building tops; rooftop structures",Creates false alarms and reduces user trust,Add hard negative local samples
+Missed detections,Model fails to detect visible drones,"far-range drones; drones near trees; drones near buildings; low-visibility drones",System may miss real drone activity,Collect more local drone footage and fine-tune
+Unstable detections,Model detects drone for a short time and then loses it,"detection flickering; detection lost when background changes",Unreliable video-level monitoring,Add object tracking or temporal smoothing
+Multi-drone failure,Model detects one drone but misses another,"one drone detected while another is ignored",Weakness in multi-object drone scenes,Add multi-drone training samples and evaluate by scene type
+Domain shift,Public-trained model struggles with local visual conditions,"phone camera footage; local buildings; humans; lighting; trees; windows",Public benchmark performance does not fully transfer locally,Perform local annotated evaluation and region-specific fine-tuning
